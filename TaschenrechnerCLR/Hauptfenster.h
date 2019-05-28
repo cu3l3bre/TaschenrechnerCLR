@@ -682,31 +682,32 @@ private: System::Void button_calc_Click(System::Object^  sender, System::EventAr
 	}
 
 	label_InOut->Text = result.ToString();
+	button_calc->Hide();
 }
 
 
 
-		 void checkForOperation()
-		 {
-			 if (label_InOut->Text->Contains("+") ||
-				 label_InOut->Text->Contains("-") ||
-				 label_InOut->Text->Contains("*") ||
-				 label_InOut->Text->Contains("/"))
-			 {
-				 button_add->Hide();
-				 button_sub->Hide();
-				 button_mul->Hide();
-				 button_div->Hide();
-				 button_calc->Show();
-			 }
-			 else
-			 {
-				 button_add->Show();
-				 button_sub->Show();
-				 button_mul->Show();
-				 button_div->Show();
-			 }
-		 }
+void checkForOperation()
+{
+	if (label_InOut->Text->Contains("+") ||
+		label_InOut->Text->Contains("-") ||
+		label_InOut->Text->Contains("*") ||
+		label_InOut->Text->Contains("/"))
+	{
+		button_add->Hide();
+		button_sub->Hide();
+		button_mul->Hide();
+		button_div->Hide();
+		button_calc->Show();
+	}
+	else
+	{
+		button_add->Show();
+		button_sub->Show();
+		button_mul->Show();
+		button_div->Show();
+	}
+}
 
 
 };
